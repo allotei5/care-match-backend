@@ -23,10 +23,8 @@ server.listen(8080, () => {
     console.log('Server running on http://localhost:8080')
 })
 
-const MONGO_URL =
-  "mongodb+srv://allotei5:BW5nt3Va7iOKxqxP@cluster0.nq0tq.mongodb.net/care-match-db?retryWrites=true&w=majority&appName=Cluster0";
 
-console.log(process.env.MONGO_URL)
+
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.on("error", (error: Error) => console.log(error));
