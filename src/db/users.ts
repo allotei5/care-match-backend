@@ -9,6 +9,13 @@ const UserSchema = new mongoose.Schema({
     salt: { type: String, select: false },
     sessionToken: { type: String, select: false },
   },
+  role: {
+    type: Number, required: true
+  },
+  company: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Company'
+  }
 });
 
 export const UserModel = mongoose.model("User", UserSchema);
